@@ -24,25 +24,25 @@ public:
     void make_move();
 
 private:
-    uint64_t white_pieces;
-    uint64_t black_pieces;
-    uint64_t all_pieces;
-    int piece_list[12][16];
-    uint64_t bitboards[12];
+    uint64_t white_pieces_;
+    uint64_t black_pieces_;
+    uint64_t all_pieces_;
+    int piece_list_[12][16];
+    uint64_t bitboards_[12];
 
     // attack tables
-    uint64_t knight_attacks[64];
-    uint64_t king_attacks[64];
+    uint64_t knight_attacks_[64];
+    uint64_t king_attacks_[64];
 
     // magic bitboards
-    uint64_t rook_masks[64];
-    uint64_t bishop_masks[64];
+    uint64_t rook_masks_[64];
+    uint64_t bishop_masks_[64];
 
-    uint64_t rook_magics[64];
-    uint64_t bishop_magics[64];
+    uint64_t rook_magics_[64];
+    uint64_t bishop_magics_[64];
 
-    uint64_t rook_attacks[64][4096];
-    uint64_t bishop_attacks[64][512];
+    uint64_t rook_attacks_[64][4096];
+    uint64_t bishop_attacks_[64][512];
 
     // 0 for white, 1 for black
     bool turn_ = 0;
@@ -52,4 +52,6 @@ private:
     bool wqueencastle_ = true;
     char epf_ = '-';
     int epr_ = 0; 
+    int fullmove_ = 0;
+    int halfmove_ = 0;
 };
